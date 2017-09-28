@@ -1,0 +1,24 @@
+<?php
+   
+       if($a = $_GET["ano"]){
+          
+           $i = date("Y") - $a;
+       } else {
+           echo "Ano de nascimento não informado";    
+       }
+      
+       $nome= isset($_GET["nome"])?$_GET["nome"]:"[NOME NÃO INFORMADO]";
+ 
+       if($i<16){
+           $v = "Prezado(a) $nome você tem $i e não pode votar nem dirigir";
+           
+       }else{
+            if(($i>16&&$i<18)|| $i>65){
+                    $v = "Prezado(a) $nome você tem $i e pode votar opcionalmente mas nao pode dirigir ";
+            }else{
+                $v = "Prezado(a) $nome você tem $i e pode votar e dirigir";
+            };
+                    
+            };
+       echo $v;
+       ?>
